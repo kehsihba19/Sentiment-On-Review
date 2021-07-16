@@ -19,7 +19,7 @@ def app():
             uploaded_file.seek(0)
             input_df = pd.read_csv(uploaded_file, low_memory=False)
             for i in range(input_df.shape[0]):
-                url='https://fastapi-review.herokuapp.com/api/'
+                url='https://backend-fastapi.herokuapp.com/api/'
                 x=requests.post(url,json={'review':input_df['Review'][i]}).json()
                 result = x['Message']
                 if result=='Positive':

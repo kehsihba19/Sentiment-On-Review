@@ -9,7 +9,7 @@ def app():
     if st.button("Submit"):
         if(len(single_review)):
             with st.spinner('Analysing the product review'):
-                url='https://fastapi-review.herokuapp.com/api/'
+                url='https://backend-fastapi.herokuapp.com/api/'
                 x=requests.post(url,json={'review':single_review}).json()
                 if x['Message']=='Positive':
                     st.success("""## Great Work there! People liked your product 😃""")
